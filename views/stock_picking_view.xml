@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- INHERIT STOCK PICKING VIEW (reference 'sc' -> sale.channel) -->
+    <record id="stock_picking_inherit_sc" model="ir.ui.view">
+        <field name="name">stock.picking.inherit.sc</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='location_id']" position="after">
+                <field name="sale_channel_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
