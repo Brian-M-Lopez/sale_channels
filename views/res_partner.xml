@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- INHERIT RES PARTNER VIEW -->
+    <record id="res_partner_inherit_credit" model="ir.ui.view">
+        <field name="name">res.partner.inherit.credit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Credit Group">
+                    <group>
+                        <group>
+                            <field name="user_credit_control"/>
+                        </group>
+                        <group>
+                            <field name="credit_group_ids" widget="many2many_tags" attrs="{'invisible': [('user_credit_control', '=', False)], 'required': [('user_credit_control', '=', True)]}"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
