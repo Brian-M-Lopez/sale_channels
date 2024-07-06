@@ -47,7 +47,7 @@
             <field name="view_mode">tree,form</field>
     </record>
     <!-- MENU ITEM -->
-    <menuitem id="menu_sale_channel" name="Credit Groups"
+    <menuitem id="menu_credit_group" name="Credit Groups"
             parent="sale.menu_sale_config"
             action="action_credit_group"/>
 </odoo>
