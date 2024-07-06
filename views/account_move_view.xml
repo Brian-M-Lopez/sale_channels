@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- INHERIT ACCOUNT MOVE VIEW (reference 'sc' -> sale.channel) -->
+    <record id="account_move_inherit_sc" model="ir.ui.view">
+        <field name="name">account.move.inherit.sc</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_reference']" position="after">
+                <field name="sale_channel_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
