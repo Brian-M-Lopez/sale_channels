@@ -16,6 +16,7 @@
         'views/stock_picking_view.xml',
         'views/account_move_view.xml',
         'views/credit_group.xml',
+        'views/res_partner.xml',
     ],
     'installable': True,
     'auto_install': False,
