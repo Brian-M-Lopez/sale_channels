@@ -8,6 +8,7 @@ class CreditGroup(models.Model):
 
     _sql_constraints = [
         ('unique_credit_code', 'unique(code)', 'This credit code is already used!!'),
+        ('unique_sale_channel_id', 'unique(sale_channel_id)', 'This Sale Channel is already used!!'),
     ]
     @api.constrains('code')
     def _avoid_n026_credit_code(self):
@@ -24,4 +25,11 @@ class CreditGroup(models.Model):
     global_credit = fields.Monetary(string=_("Global Credit"), currency_field='company_currency_id')
     # TODO Add copmute method for used_credit
     used_credit = fields.Monetary(string=_("Used Credit"), currency_field='company_currency_id')
-    credit_avaiable = fields.Monetary(string=_("Credit Avaiable"), currency_field='company_currency_id')
+    credit_avaiable = fields.Monetary(string=_("Credit Avaiable"), currency_field='company_currency_id', compute="_compute_credit_avaiable", store=True)
+
+    res_partner_id = fields.Many2one(comodel_name="res.partner")
+
+    @api.depends("used_credit")
+    def _compute_credit_avaiable(self):
+        for rec in self:
+            rec.credit_avaiable = rec.global_credit - rec.used_credit
