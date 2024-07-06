@@ -8,7 +8,11 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='payment_term_id']" position="after">
                 <field name="sale_channel_id"/>
-                <field name="credit_type"/>
+                <field name="credit_type"
+                    decoration-danger="credit_type == 'credit_bloqued'"
+                    decoration-success="credit_type == 'credit_avaiable'"
+                    decoration-muted="credit_type == 'no_limit'"
+                />
             </xpath>
         </field>
     </record>

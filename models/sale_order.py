@@ -9,7 +9,8 @@ class SaleOrder(models.Model):
         selection=[('no_limit', 'No Limit'), ('credit_avaiable', 'Credit Avaiable'), ('credit_bloqued', 'Credit Bloqued')],
         string=_("Credit Type"),
         default='no_limit',
-        compute="_compute_credit_type"
+        compute="_compute_credit_type",
+        store=True
     )
 
     @api.onchange("sale_channel_id")
@@ -17,12 +18,18 @@ class SaleOrder(models.Model):
         if self.sale_channel_id and self.sale_channel_id.warehouse_id:
             self.warehouse_id = self.sale_channel_id.warehouse_id
     
-    @api.depends("partner_id", "sale_channel_id")
+    @api.depends("partner_id", "sale_channel_id", "amount_total")
     def _compute_credit_type(self):
-        if self.partner_id and self.partner_id.user_credit_control and self.sale_channel_id:
-            credit_group = self.env["credit.group"].search([("partner_id", "=", self.res_partner), ("sale_channel_id", "=", self.sale_channel_id)])
-            if credit_group:
-                pass
+        for rec in self:
+            if rec.partner_id and rec.partner_id.user_credit_control and rec.sale_channel_id:
+                credit_group = rec.env["credit.group"].search([("res_partner_id", "=", rec.partner_id.id), ("sale_channel_id", "=", rec.sale_channel_id.id)])
+                if credit_group:
+                    credit_avaiable = credit_group.credit_avaiable
+                    if credit_avaiable > rec.amount_total:
+                        rec.credit_type = 'credit_avaiable'
+                    elif credit_avaiable < rec.amount_total:
+                        rec.credit_type = 'credit_bloqued'
+
 
     def _prepare_invoice(self):
         invoice_vals = super(SaleOrder, self)._prepare_invoice()
