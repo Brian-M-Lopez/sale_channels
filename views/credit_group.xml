@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- TREE VIEW -->
+    <record id="credit_group_tree_view" model="ir.ui.view">
+        <field name="name">credit.group.tree.view</field>
+        <field name="model">credit.group</field>
+        <field name="arch" type="xml">
+            <tree string="Credit Groups">
+                <field name="name" />
+                <field name="code" />
+                <field name="sale_channel_id" />
+                <field name="company_currency_id" />
+                <field name="global_credit" />
+                <field name="used_credit" />
+                <field name="credit_avaiable" />
+            </tree>
+        </field>
+    </record>
+    <!-- FORM VIEW -->
+    <record id="credit_group_form_view" model="ir.ui.view">
+        <field name="name">credit.group.form.view</field>
+        <field name="model">credit.group</field>
+        <field name="arch" type="xml">
+            <form string="Credit Group">
+                <sheet string="Credit Group">
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="code" />
+                            <field name="sale_channel_id" />
+                            <field name="company_currency_id" />
+                        </group>
+                        <group>
+                            <field name="global_credit" />
+                            <field name="used_credit" />
+                            <field name="credit_avaiable" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- ACTION -->
+    <record id="action_credit_group" model="ir.actions.act_window">
+            <field name="name">Credit Groups</field>
+            <field name="res_model">credit.group</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+    <!-- MENU ITEM -->
+    <menuitem id="menu_sale_channel" name="Credit Groups"
+            parent="sale.menu_sale_config"
+            action="action_credit_group"/>
+</odoo>
