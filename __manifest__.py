@@ -12,6 +12,7 @@
         'security/ir.model.access.csv',
         'data/sale_channel_sequence.xml',
         'views/sale_channel_view.xml',
+        'views/sale_order_view.xml',
     ],
     'installable': True,
     'auto_install': False,
