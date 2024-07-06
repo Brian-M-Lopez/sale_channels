@@ -10,6 +10,7 @@
     'depends': ['stock', 'sale'],
     'data': [
         'security/ir.model.access.csv',
+        'data/sale_channel_sequence.xml',
         'views/sale_channel_view.xml',
     ],
     'installable': True,
