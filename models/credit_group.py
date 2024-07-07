@@ -24,26 +24,23 @@ class CreditGroup(models.Model):
     company_currency_id = fields.Many2one(string='Company Currency', readonly=True, related='company_id.currency_id')
     global_credit = fields.Monetary(string=_("Global Credit"), currency_field='company_currency_id')
     # TODO Add copmute method for used_credit
-    used_credit = fields.Monetary(string=_("Used Credit"), currency_field='company_currency_id', compute="_compute_used_credit", store=True)
-    credit_avaiable = fields.Monetary(string=_("Credit Avaiable"), currency_field='company_currency_id', compute="_compute_credit_avaiable", store=True)
+    used_credit = fields.Monetary(string=_("Used Credit"), currency_field='company_currency_id', compute="_copmute_credit_balance")
+    credit_avaiable = fields.Monetary(string=_("Credit Avaiable"), currency_field='company_currency_id', compute="_copmute_credit_balance")
 
     res_partner_id = fields.Many2one(comodel_name="res.partner")
 
-    @api.depends("used_credit")
-    def _compute_credit_avaiable(self):
-        for rec in self:
-            rec.credit_avaiable = rec.global_credit - rec.used_credit
-
-    def _compute_used_credit(self):
+    def _copmute_credit_balance(self):
         for rec in self:
             so_total = 0
             inv_total = 0
             sale_orders = self.env["sale.order"].search([("sale_channel_id", "=", rec.sale_channel_id.id), ("state", "=", "sale"), ("invoice_status", "!=", "invoiced")])
             invoices = self.env["account.move"].search([("sale_channel_id", "=", rec.sale_channel_id.id),("payment_state", "=", "not_paid")])
-            so_with_credit = sale_orders.filtered(lambda x: rec.id in x.partner_id.credit_group_ids)
-            inv_with_credit = invoices.filtered(lambda x: rec.id in x.partner_id.credit_group_ids)
+            so_with_credit = sale_orders.filtered(lambda x: rec.id in x.partner_id.credit_group_ids.ids)
+            inv_with_credit = invoices.filtered(lambda x: rec.id in x.partner_id.credit_group_ids.ids)
             if so_with_credit:
                 so_total = sum([x.amount_total for x in so_with_credit])
             if inv_with_credit:
                 inv_total = sum([x.amount_total for x in inv_with_credit])
-            rec.used_credit += so_total + inv_total
+            total = so_total + inv_total
+            rec.used_credit += total
+            rec.credit_avaiable = rec.global_credit - total
