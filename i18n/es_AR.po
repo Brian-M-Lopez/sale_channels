@@ -1,0 +1,248 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* calyx_sales_channels
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20240603\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-07 00:43+0000\n"
+"PO-Revision-Date: 2024-07-07 00:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: calyx_sales_channels
+#: code:addons/calyx_sales_channels/models/credit_group.py:0
+#: code:addons/calyx_sales_channels/models/sales_channels.py:0
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__code
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_sale_channel__code
+#, python-format
+msgid "Code"
+msgstr "Código"
+
+#. module: calyx_sales_channels
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__company_id
+msgid "Company"
+msgstr "Compañia"
+
+#. module: calyx_sales_channels
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__company_currency_id
+msgid "Company Currency"
+msgstr "Moneda de la Compañia"
+
+#. module: calyx_sales_channels
+#: model:ir.model,name:calyx_sales_channels.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: calyx_sales_channels
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__create_uid
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_sale_channel__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: calyx_sales_channels
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__create_date
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_sale_channel__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: calyx_sales_channels
+#: code:addons/calyx_sales_channels/models/credit_group.py:0
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__credit_avaiable
+#: model:ir.model.fields.selection,name:calyx_sales_channels.selection__sale_order__credit_type__credit_avaiable
+#, python-format
+msgid "Credit Avaiable"
+msgstr "Crédito Disponible"
+
+#. module: calyx_sales_channels
+#: model:ir.model.fields.selection,name:calyx_sales_channels.selection__sale_order__credit_type__credit_bloqued
+msgid "Credit Bloqued"
+msgstr "Crédito Bloquead"
+
+#. module: calyx_sales_channels
+#: model_terms:ir.ui.view,arch_db:calyx_sales_channels.credit_group_form_view
+#: model_terms:ir.ui.view,arch_db:calyx_sales_channels.res_partner_inherit_credit
+msgid "Credit Group"
+msgstr "Grupo de Crédito"
+
+#. module: calyx_sales_channels
+#: model:ir.actions.act_window,name:calyx_sales_channels.action_credit_group
+#: model:ir.ui.menu,name:calyx_sales_channels.menu_credit_group
+#: model_terms:ir.ui.view,arch_db:calyx_sales_channels.credit_group_tree_view
+msgid "Credit Groups"
+msgstr "Grupos de Crédito"
+
+#. module: calyx_sales_channels
+#: code:addons/calyx_sales_channels/models/sale_order.py:0
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_sale_order__credit_type
+#, python-format
+msgid "Credit Type"
+msgstr "Tipo de Crédito"
+
+#. module: calyx_sales_channels
+#: code:addons/calyx_sales_channels/models/res_partner.py:0
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_res_partner__credit_group_ids
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_res_users__credit_group_ids
+#, python-format
+msgid "Credits"
+msgstr "Créditos"
+
+#. module: calyx_sales_channels
+#: code:addons/calyx_sales_channels/models/sales_channels.py:0
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_sale_channel__warehouse_id
+#, python-format
+msgid "Deposit"
+msgstr "Depósit"
+
+#. module: calyx_sales_channels
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__display_name
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_sale_channel__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: calyx_sales_channels
+#: code:addons/calyx_sales_channels/models/credit_group.py:0
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__global_credit
+#, python-format
+msgid "Global Credit"
+msgstr "Crédito Global"
+
+#. module: calyx_sales_channels
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__id
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_sale_channel__id
+msgid "ID"
+msgstr ""
+
+#. module: calyx_sales_channels
+#: code:addons/calyx_sales_channels/models/sales_channels.py:0
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_sale_channel__invoice_journal_id
+#, python-format
+msgid "Invoice Journal"
+msgstr "Diarios"
+
+#. module: calyx_sales_channels
+#: model:ir.model,name:calyx_sales_channels.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: calyx_sales_channels
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group____last_update
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_sale_channel____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: calyx_sales_channels
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__write_uid
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_sale_channel__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: calyx_sales_channels
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__write_date
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_sale_channel__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: calyx_sales_channels
+#: code:addons/calyx_sales_channels/models/credit_group.py:0
+#: code:addons/calyx_sales_channels/models/sales_channels.py:0
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__name
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_sale_channel__name
+#, python-format
+msgid "Name"
+msgstr "Nómbre"
+
+#. module: calyx_sales_channels
+#: model:ir.model.fields.selection,name:calyx_sales_channels.selection__sale_order__credit_type__no_limit
+msgid "No Limit"
+msgstr "Sin límite"
+
+#. module: calyx_sales_channels
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__res_partner_id
+msgid "Res Partner"
+msgstr "Contacto"
+
+#. module: calyx_sales_channels
+#: code:addons/calyx_sales_channels/models/account_move.py:0
+#: code:addons/calyx_sales_channels/models/credit_group.py:0
+#: code:addons/calyx_sales_channels/models/sale_order.py:0
+#: code:addons/calyx_sales_channels/models/stock_picking.py:0
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_account_bank_statement_line__sale_channel_id
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_account_move__sale_channel_id
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_account_payment__sale_channel_id
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__sale_channel_id
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_sale_order__sale_channel_id
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_stock_picking__sale_channel_id
+#: model_terms:ir.ui.view,arch_db:calyx_sales_channels.sale_channel_form_view
+#, python-format
+msgid "Sale Channel"
+msgstr "Canal de Venta"
+
+#. module: calyx_sales_channels
+#: model:ir.actions.act_window,name:calyx_sales_channels.action_sale_channels
+#: model:ir.ui.menu,name:calyx_sales_channels.menu_sale_channel
+#: model_terms:ir.ui.view,arch_db:calyx_sales_channels.sale_channel_tree_view
+msgid "Sale Channels"
+msgstr "Canales de Venta"
+
+#. module: calyx_sales_channels
+#: model:ir.model,name:calyx_sales_channels.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: calyx_sales_channels
+#: model:ir.model.constraint,message:calyx_sales_channels.constraint_credit_group_unique_sale_channel_id
+msgid "This Sale Channel is already used!!"
+msgstr "Este Canal de Venta ya esta siendo usado!!"
+
+#. module: calyx_sales_channels
+#: model:ir.model.constraint,message:calyx_sales_channels.constraint_credit_group_unique_credit_code
+msgid "This credit code is already used!!"
+msgstr "Este codigo de crédito esta siendo usado!!"
+
+#. module: calyx_sales_channels
+#: model:ir.model,name:calyx_sales_channels.model_stock_picking
+msgid "Transfer"
+msgstr "Albarán"
+
+#. module: calyx_sales_channels
+#: code:addons/calyx_sales_channels/models/credit_group.py:0
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_credit_group__used_credit
+#, python-format
+msgid "Used Credit"
+msgstr "Crédito Usado"
+
+#. module: calyx_sales_channels
+#: code:addons/calyx_sales_channels/models/res_partner.py:0
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_res_partner__user_credit_control
+#: model:ir.model.fields,field_description:calyx_sales_channels.field_res_users__user_credit_control
+#, python-format
+msgid "User has credit control?"
+msgstr "Uusario controla el Crédito"
+
+#. module: calyx_sales_channels
+#: code:addons/calyx_sales_channels/models/credit_group.py:0
+#, python-format
+msgid "You can not include the string '026' for the code!!"
+msgstr "No puedes incluir el string '026' en el código"
+
+#. module: calyx_sales_channels
+#: code:addons/calyx_sales_channels/models/sale_order.py:0
+#, python-format
+msgid "You can't confirm a Sale Order with bloqued credit!!"
+msgstr "No puedes confirmar una Orden de Venta con crédito bloqueado"
+
+#. module: calyx_sales_channels
+#: model:ir.model,name:calyx_sales_channels.model_credit_group
+msgid "credit.group"
+msgstr ""
+
+#. module: calyx_sales_channels
+#: model:ir.model,name:calyx_sales_channels.model_sale_channel
+msgid "sale.channel"
+msgstr ""
