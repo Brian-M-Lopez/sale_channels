@@ -1,4 +1,5 @@
 from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 
 class SaleOrder(models.Model):
@@ -30,8 +31,14 @@ class SaleOrder(models.Model):
                     elif credit_avaiable < rec.amount_total:
                         rec.credit_type = 'credit_bloqued'
 
-
     def _prepare_invoice(self):
         invoice_vals = super(SaleOrder, self)._prepare_invoice()
         invoice_vals['sale_channel_id'] = self.sale_channel_id.id
         return invoice_vals
+    
+    def _action_confirm(self):
+        res = super()._action_confirm()
+        if self.credit_type == 'credit_bloqued':
+            raise ValidationError(_("You can't confirm a Sale Order with bloqued credit!!"))
+        else:
+            return res
