@@ -2,6 +2,7 @@ from odoo import models, fields, _
 
 class SaleChannel(models.Model):
     _name = "sale.channel"
+    _inherit = ['mail.thread']
 
     name = fields.Char(string=_("Name"), required=True)
     code = fields.Char(string=_("Code"), default=lambda self: self.env['ir.sequence'].next_by_code('sale.channel'), readonly=True)
